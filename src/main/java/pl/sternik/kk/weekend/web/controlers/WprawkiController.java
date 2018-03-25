@@ -24,5 +24,12 @@ public class WprawkiController {
         model.addAttribute("data", new Date());
         return "wprawki-jsp";
     }
-
+    
+    @GetMapping("/wprawki-jsp/{cos}")
+    public String wprawki(@PathVariable String cos, ModelMap model) {
+        model.addAttribute("cos", cos);
+        model.put("msg", "Wartosc z modelu");
+        model.addAttribute("data", new Date());
+        return "wprawki-jsp";
+    }
 }

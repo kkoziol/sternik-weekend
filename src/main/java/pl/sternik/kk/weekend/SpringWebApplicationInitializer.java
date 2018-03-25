@@ -1,5 +1,8 @@
 package pl.sternik.kk.weekend;
 
+import javax.servlet.Filter;
+
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import pl.sternik.kk.weekend.web.SpringWebConfig;
@@ -31,12 +34,12 @@ public class SpringWebApplicationInitializer extends AbstractAnnotationConfigDis
         return new String[] { "/" };
     }
 
-/*    @Override
+    @Override
     protected Filter[] getServletFilters() {
         final CharacterEncodingFilter encodingFilter = new CharacterEncodingFilter();
         encodingFilter.setEncoding(CHARACTER_ENCODING);
-        encodingFilter.setForceEncoding(false);
+        encodingFilter.setForceEncoding(true);
         return new Filter[] { encodingFilter };
-    }*/
+    }
 
 }
