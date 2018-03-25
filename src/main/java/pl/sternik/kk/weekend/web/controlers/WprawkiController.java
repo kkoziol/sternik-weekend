@@ -32,4 +32,16 @@ public class WprawkiController {
         model.addAttribute("data", new Date());
         return "wprawki-jsp";
     }
+    
+    @GetMapping("/wprawki2")
+    @ResponseBody
+    public String wprawkiParam(@RequestParam("cos") String cosParam, ModelMap model) {
+        return "Wprawki z param cos=" + cosParam;
+    }
+    
+    @GetMapping("/wprawki3")
+    @ResponseBody
+    public String wprawkiHeader(@RequestHeader("User-Agent") String cosParam, ModelMap model) {
+        return "Uzywasz przegladarki:=" + cosParam;
+    }
 }
