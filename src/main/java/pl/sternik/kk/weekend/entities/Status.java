@@ -4,6 +4,7 @@ package pl.sternik.kk.weekend.entities;
 public enum Status {
     
     NOWA("Nowa"), 
+    STARA("Stara"),
     DO_SPRZEDANIA("Do sprzedania"),
     DUBLET("Dublet");
     
