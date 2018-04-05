@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import pl.sternik.kk.weekend.entities.Moneta;
@@ -27,10 +28,15 @@ import pl.sternik.kk.weekend.entities.Status;
 import pl.sternik.kk.weekend.services.KlaserService;
 import pl.sternik.kk.weekend.services.NotificationService;
 import pl.sternik.kk.weekend.services.NotificationService.NotificationMessage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @Controller
 public class MonetyController {
 
+    @Autowired
+    private Logger logger; 
+    
     @Autowired
     // @Qualifier("spring-data")
     @Qualifier("tablica")
@@ -47,7 +53,7 @@ public class MonetyController {
     
     @ModelAttribute("MyMessages")
     public List<NotificationMessage> populateMessages() {
-        System.out.println("dupa");
+        logger.info("Daj messagesy!");
         return notifyService.getNotificationMessages();
     }
     
@@ -118,9 +124,9 @@ public class MonetyController {
     }
 
     @RequestMapping(value = "/monety", params = { "remove" }, method = RequestMethod.POST)
-    public String removeRow(final Moneta moneta, final BindingResult bindingResult, final HttpServletRequest req) {
-        final Integer rowId = Integer.valueOf(req.getParameter("remove"));
-        Optional<Boolean> result = klaserService.deleteById(rowId.longValue());
+    public String removeRow(final Moneta moneta, final BindingResult bindingResult, final HttpServletRequest req, @RequestParam Integer remove) {
+//        final Integer rowId = Integer.valueOf(req.getParameter("remove"));
+        Optional<Boolean> result = klaserService.deleteById(remove.longValue());
         return "redirect:/monety";
     }
 
