@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 @ComponentScan(basePackages = { "pl.sternik.kk.weekend" }, excludeFilters = {
         @Filter(type = FilterType.REGEX, pattern = "pl\\.sternik\\.kk\\.weekend\\.web\\..*") })
-@ImportResource({"classpath:/applicationContext.xml"})//,"classpath:/database-config.xml"})
+@ImportResource({"classpath:/applicationContext*.xml"})//,"classpath:/database-config.xml"})
 public class SpringBusinessConfig {
 
     @Bean
