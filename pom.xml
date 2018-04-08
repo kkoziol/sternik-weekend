@@ -86,17 +86,6 @@
             <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
-        <!-- JDBC -->
-        <!-- <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>9.4-1201-jdbc4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>2.6.0</version>
-        </dependency> -->
         <!-- -->
         <dependency>
             <groupId>javax.annotation</groupId>
@@ -149,9 +138,8 @@
             <version>5.4.1.Final</version>
         </dependency>
 
-
         <!-- JDBC -->
-<!--         <dependency>
+        <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <version>9.4-1201-jdbc4</version>
@@ -161,26 +149,26 @@
             <artifactId>h2</artifactId>
             <version>1.4.194</version>
         </dependency>
-        <dependency>
+        <!-- <dependency>
             <groupId>com.zaxxer</groupId>
             <artifactId>HikariCP</artifactId>
             <version>2.6.0</version>
-        </dependency> -->
-
-<!--         <dependency>
+            </dependency>
+        -->
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
             <version>4.3.6.Final</version>
-        </dependency> -->
+        </dependency>
 
         <!-- Spring Data Commons -->
-<!--         <dependency>
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-commons</artifactId>
         </dependency>
- -->
+
         <!-- Spring Data JPA -->
-    <!--     <dependency>
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-jpa</artifactId>
         </dependency>
@@ -190,7 +178,7 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.4</version>
         </dependency>
- -->
+
         <!-- Spring Security -->
         <dependency>
             <groupId>org.springframework.security</groupId>
@@ -202,21 +190,21 @@
             <artifactId>spring-security-config</artifactId>
             <version>4.2.2.RELEASE</version>
         </dependency>
-    <!-- Logging with SLF4J & Log4j -->
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-api</artifactId>
-        <version>2.7</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-core</artifactId>
-        <version>2.7</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.logging.log4j</groupId>
-        <artifactId>log4j-slf4j-impl</artifactId>
-        <version>2.7</version>
-    </dependency>
+        <!-- Logging with SLF4J & Log4j -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.7</version>
+        </dependency>
     </dependencies>
 </project>
