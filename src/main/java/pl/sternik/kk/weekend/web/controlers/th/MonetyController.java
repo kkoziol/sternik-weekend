@@ -7,6 +7,7 @@ import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
 //import javax.validation.Valid;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -38,8 +39,8 @@ public class MonetyController {
     private Logger logger; 
     
     @Autowired
-    // @Qualifier("spring-data")
-    @Qualifier("tablica")
+     @Qualifier("spring-data")
+//    @Qualifier("tablica")
     // @Qualifier("lista")
     private KlaserService klaserService;
 
@@ -89,8 +90,7 @@ public class MonetyController {
     }
 
     @RequestMapping(value = "/monety", params = { "save" }, method = RequestMethod.POST)
-    public String saveMoneta(Moneta moneta, BindingResult bindingResult, ModelMap model) {
-        // @Valid
+    public String saveMoneta(@Valid Moneta moneta, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");
             model.addAttribute("MyMessages",  notifyService.getNotificationMessages());
@@ -111,7 +111,7 @@ public class MonetyController {
     }
 
     @RequestMapping(value = "/monety", params = { "create" }, method = RequestMethod.POST)
-    public String createMoneta(Moneta moneta, BindingResult bindingResult, ModelMap model) {
+    public String createMoneta(@Valid Moneta moneta, BindingResult bindingResult, ModelMap model) {
         if (bindingResult.hasErrors()) {
             notifyService.addErrorMessage("Please fill the form correctly!");
             model.addAttribute("MyMessages",  notifyService.getNotificationMessages());

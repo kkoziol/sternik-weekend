@@ -26,8 +26,8 @@ import pl.sternik.kk.weekend.services.NotificationService;
 public class KlaserController {
 
     @Autowired
-//    @Qualifier("spring-data")
-    @Qualifier("tablica")
+    @Qualifier("spring-data")
+//    @Qualifier("tablica")
 //    @Qualifier("lista")
     private KlaserService klaserService;
 
